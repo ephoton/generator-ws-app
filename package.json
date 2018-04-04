@@ -1,0 +1,27 @@
+{
+  "name": "generator-ws-app",
+  "version": "1.0.0",
+  "description": "Website app generator.",
+  "files": [
+    "generators"
+  ],
+  "keywords": ["yeoman-generator"],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ephoton/generator-ws-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ephoton/generator-ws-app/issues"
+  },
+  "homepage": "https://github.com/ephoton/generator-ws-app#readme",
+  "devDependencies": {
+    "chalk": "^2.3.2",
+    "yeoman-generator": "^2.0.3"
+  }
+}
