@@ -8,27 +8,8 @@ var path = require('path'),
     // yosay = require('yosay'),
     fs = require('fs'),
     path = require('path'),
+    { exec } = require('child_process');
     templatesPath = path.join(__dirname, 'templates');
-
-function copyFilesOfDir(dirPath) {
-    var self = this;
-
-    fs.readdir(dirPath, function(err, files) {
-        if (err) {
-            return;
-        }
-
-        files.map(function (file) {
-            var newPath = path.join(dirPath, file);
-
-            if (fs.lstatSync(newPath).isDirectory()) {
-                self.fs.directory(newPath, file);
-            } else {
-                self.fs.copy(newPath, file);
-            }
-        });
-    });
-}
 
 module.exports = class extends Generator {
     info() {
@@ -38,9 +19,8 @@ module.exports = class extends Generator {
     }
 
     generateBasic() {
-        // copyFilesOfDir.call(this, templatesPath);
         let to = path.resolve('./');
-        this.fs.copyTpl(templatesPath, to);
+        this.fs.copy(templatesPath, to);
     }
 
     generateClient() {
@@ -50,7 +30,7 @@ module.exports = class extends Generator {
 
     install() {
         var self = this;
-
+                
         this.log(chalk.green(
             '\nBegin installing dependencies'
         ));
@@ -70,6 +50,8 @@ module.exports = class extends Generator {
     }
 
     end() {
+        exec('echo "node_modules" > .gitignore');
+        
         this.log(chalk.yellow(
             '\nYour generator has been created successfully!\n'
         ));
