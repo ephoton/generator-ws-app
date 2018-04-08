@@ -1,0 +1,9 @@
+{
+  "outDir": "./dist",
+  "entryDir": "./src/component/page",
+  "server": {
+    "port": 3000,
+    "static": "./static",
+    "view": "./view"
+  }
+}
