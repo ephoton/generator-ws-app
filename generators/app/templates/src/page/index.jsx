@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-import img from "./../../../static/image/naturali.png";
-import "./../../style/index.scss";
+import img from "./../../static/image/naturali.png";
+import "./../style/index.scss";
 
 class Home extends React.Component{
     constructor(props) {
